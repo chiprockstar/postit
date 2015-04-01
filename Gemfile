@@ -9,7 +9,7 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'atomic', '~> 1.1.99'
+#gem 'atomic', '~> 1.1.99'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -21,11 +21,11 @@ end
 group :development do
   gem 'quiet_assets'
   gem 'pry'
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'pg' #, '~> 0.18.1'
 end
 
 group :production do
-  #gem 'pg' #, '~> 0.18.1'
+  gem 'pg' #, '~> 0.18.1'
   gem 'rails_12factor'
 end
