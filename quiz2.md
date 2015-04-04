@@ -34,7 +34,7 @@ Non-model backed form helpers are used for situations where a model form is not 
 A particularly common task for a form_for is editing or creating a model object. Rails provides 
 helpers tailored to this task.
 
-<%= form_for @article do |f| %>
+ %><%= form_for @article do |f| %>
   <%= f.text_field :title %>
   <%= f.text_area :body  %>
   <%= f.submit "Create" %>
