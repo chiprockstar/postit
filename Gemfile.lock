@@ -37,6 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    awesome_print (1.6.1)
+    bond (0.5.1)
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.2.2)
@@ -48,6 +50,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    commands (0.2.1)
+      rails (>= 3.2.0)
+    cucumber-console (0.2.1)
+      rails-env-switcher
     erubis (2.7.0)
     execjs (2.4.0)
     globalid (0.3.3)
@@ -78,6 +84,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-doc (0.6.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -100,6 +111,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-env-switcher (0.2.4)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_12factor (0.0.3)
@@ -114,6 +126,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    rspec-console (0.4.0)
+      bond
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -143,20 +157,27 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bootstrap-sass (~> 2.3.2.0)
   coffee-rails (~> 4.0.0)
+  commands
+  cucumber-console
   jbuilder (~> 1.2)
   jquery-rails
   pg
   pry
+  pry-doc
+  pry-rails
   quiet_assets
   rails (= 4.2.1)
   rails_12factor
+  rspec-console
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks

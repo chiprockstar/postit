@@ -9,7 +9,6 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-#gem 'atomic', '~> 1.1.99'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -20,7 +19,13 @@ end
 
 group :development do
   gem 'quiet_assets'
-  gem 'pry'
+  gem 'pry' #, '~> 0.10.1'
+  gem 'pry-doc'
+  gem 'awesome_print'
+  gem 'rspec-console'
+  gem 'cucumber-console'
+  gem 'commands'
+  gem 'pry-rails'
   #gem 'sqlite3'
   gem 'pg' #, '~> 0.18.1'
 end
