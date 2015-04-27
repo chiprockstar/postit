@@ -2,15 +2,8 @@
   <li>
     <%= link_to "Postit!", root_path, :class => 'brand' %>
   </li>
-  <li>
-    <%#= link_to 'New Post', new_post_path %>
-  </li>
 </ul>
-<% if logged_in? %>
-<div class='nav_item'>
-  <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
-</div>
-<% end %>
+
 <div class='btn-group nav_item'>
 
   <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
@@ -40,15 +33,15 @@
   </ul>
 </div>
 
+
+
+
 <% if logged_in? %>
 
   <div class='nav_item'>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-small' %>
+    <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
   </div>
-  <div class='nav_item'>
-    <%= link_to 'Log out', logout_path, class: 'btn btn-small' %>
-  </div>
-  
+
   <div class='btn-group nav_item'>
     
     <%= link_to '#', class: 'btn btn-small dropdown-toggle' , 'data-toggle' => 'dropdown' do %>
@@ -79,13 +72,6 @@
     
   </div>
   
-    <div class='nav_item'>
-    
-    <%= link_to edit_user_path(current_user.id), class: 'btn btn-small dropdown-toggle' do %>
-      Edit Profile <span class='caret'></span>
-    <% end %>
-    
-  </div>
   
 <% else %>  
   <div class='nav_item'>
