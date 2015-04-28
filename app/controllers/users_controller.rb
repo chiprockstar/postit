@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash['notice'] = "Your are registered."
+      flash['notice'] = "You are registered."
       session[:user_id] = @user.id
       redirect_to root_path
     else
