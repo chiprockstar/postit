@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.sort_by { |x| x.total_votes }.reverse
-    
   end
 
   def show
@@ -41,14 +40,15 @@ class PostsController < ApplicationController
   end
   
   def vote
-    @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
-    
-    if @vote.valid?
-      flash['notice'] = "Your vote was counted."
-    else
-      flash['error'] = "You can only vote for <strong>#{@post.title}</strong> once.".html_safe
-    end
-    redirect_to :back
+
+      @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
+      
+      if @vote.valid?
+        flash['notice'] = "Your vote was counted."
+      else
+        flash['error'] = "You can only vote for <strong>#{@post.title}</strong> once.".html_safe
+      end
+      redirect_to :back
   end
 
   private
