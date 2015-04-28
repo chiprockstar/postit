@@ -7,8 +7,7 @@
     <% end %>
     <br/>
   <% end %>
-  
-  <%= comment.total_votes %> votes
+  <%= pluralize(comment.total_votes, 'vote') %>
   <br/>
   <% if logged_in? %>
     <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post' do %>
