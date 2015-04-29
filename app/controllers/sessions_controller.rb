@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
       
     else
-      flash[:error] = "Houstan, we have a problem."
+      flash[:error] = "Houstan, we have a problem. Please enter a valid username and password."
       redirect_to login_path
     end
   end
