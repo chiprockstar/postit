@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash['notice'] = "You've logged in!"
       redirect_to root_path
-      
     else
       flash[:error] = "Houstan, we have a problem. Please enter a valid username and password."
       redirect_to login_path
@@ -21,7 +20,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     flash['notice'] = "You've logged out!"
     redirect_to root_path
-    
   end
-  
 end
