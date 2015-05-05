@@ -1,0 +1,7 @@
+$('#post_<%= @post.slug %>_votes').html("<%= pluralize(@post.total_votes, 'vote') %>");
+$('#notice_<%= @post.slug %>').fadeOut(0);
+$("#notice_<%= @post.slug %>").html("<%= escape_javascript(render :partial => 'layouts/messages' , :locals => { :flash => flash }).html_safe %>").fadeIn(2000);
+$('#notice_<%= @post.slug %>').fadeOut(3000);
+//
+//$("#example").modal().fadeOut(0);
+//$("#example").modal().fadeIn(1000);

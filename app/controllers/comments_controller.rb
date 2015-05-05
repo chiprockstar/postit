@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   
 
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by slug: params[:post_id]
     @comment = @post.comments.build(params.require(:comment).permit(:body))
     @comment.creator = current_user
     if @comment.save
@@ -17,15 +17,20 @@ class CommentsController < ApplicationController
   
   
   def vote
-    comment = Comment.find(params[:id])
-    @vote = Vote.create(voteable: comment, creator: current_user, vote: params[:vote])
     
-    if @vote.valid?
-      flash['notice'] = "Your vote was counted."
-    else
-      flash['error'] = "You can only vote once for each comment."
+    @comment = Comment.find(params[:id])
+    @vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote])
+    
+    respond_to do |format|
+       if @vote.valid?
+         flash.now['notice'] = "Your vote was counted."
+       else
+         flash.now['error'] = "You can only vote for <strong>this comment</strong> once.".html_safe
+      end
+     # format.html {redirect_to :back, notice: "Your vote was counted."}
+      format.js
     end
-    redirect_to :back
+ 
   end
   
   

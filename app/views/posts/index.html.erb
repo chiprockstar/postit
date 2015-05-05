@@ -1,5 +1,33 @@
 <%= render 'shared/content_title', title: 'All Posts' %>
 
+<!--<div class="container">  -->
+<!--<h2>Example of creating Modals with Twitter Bootstrap</h2>  -->
+<!--<div id="example" class="modal hide fade in" style="display: none; ">  -->
+<!--<div class="modal-header">  -->
+<!--<a class="close" data-dismiss="modal">×</a>  -->
+<!--<h3>This is a Modal Heading</h3>  -->
+<!--</div>  -->
+<!--<div class="modal-body">  -->
+<!--<h4>Text in a modal</h4>  -->
+<!--<p>You can add some text here.</p>                -->
+<!--</div>  -->
+<!--<div class="modal-footer">  -->
+<!--<a href="#" class="btn btn-success">Call to action</a>  -->
+<!--<a href="#" class="btn" data-dismiss="modal">Close</a>  -->
+<!--</div>  -->
+<!--</div>  -->
+<!--<p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Launch demo modal</a></p>  -->
+<!--</div>  -->
+
+
+
 <% @posts.each do |post| %>
+  <div class="row">
+    <div id="notice_<%= post.slug %>" class='span6' style="display:none">
+        <%= render :partial => 'layouts/messages' , :locals => { :flash => flash } %>
+    </div>
+    <div class="span6"></div>
+  </div>
+  </br>
   <%= render 'post', post: post %>
 <% end %>

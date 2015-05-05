@@ -14,7 +14,7 @@
   <%= form_for [ @post, @comment ] do |f| %>
     <%= render 'shared/errors', obj: @comment %>
     <div class='control-group'>
-      <%= f.label :body, 'Leave a comment' %>
+      <%= f.label :body, 'Leave a comment', class: "control-label" %></br>
       <%=  f.text_area :body, rows: 3, class: 'span4' %>
     </div>
     <br/>
@@ -24,6 +24,12 @@
 
 <h5>Comments:</h5>
 
-<% @post.comments.each do |comment| %>
+<% @post.reload.comments.each do |comment| %>
+  <div class="row">
+    <div id="notice_<%= comment.id %>" class='span6' style="display:none">
+        <%= render :partial => 'layouts/messages' , :locals => { :flash => flash } %>
+    </div>
+    <div class="span6"></div>
+  </div>
   <%= render 'comments/comment', comment: comment %>
 <% end %>

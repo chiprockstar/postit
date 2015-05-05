@@ -1,0 +1,4 @@
+$('#comment_<%= @comment.id %>_votes').html("<%= pluralize(@comment.total_votes, 'vote') %>");
+$('#notice_<%= @comment.id %>').fadeOut(0);
+$("#notice_<%= @comment.id %>").html("<%= escape_javascript(render :partial => 'layouts/messages' , :locals => { :flash => flash }).html_safe %>").fadeIn(2000);
+$('#notice_<%= @comment.id %>').fadeOut(3000);

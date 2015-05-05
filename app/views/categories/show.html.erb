@@ -1,5 +1,12 @@
 <%= render 'shared/content_title', title: "Showing Category: #{@category.name}" %>
 
 <% @category.posts.each do |post| %>
+  <div class="row">
+    <div id="notice_<%= post.id %>" class='span6' style="display:none;">
+        <%= render :partial => 'layouts/messages' , :locals => { :flash => flash } %>
+    </div>
+    <div class="span6"></div>
+  </div>
+  </br>
   <%= render 'posts/post', post: post %>
 <% end %>
