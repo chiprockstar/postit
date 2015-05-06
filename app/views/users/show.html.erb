@@ -26,7 +26,7 @@
   <% @user.posts.each do |post| %>
   </br>
   <div class="row">
-    <div id="notice_<%= post.id %>" class='span6' style="display:none">
+    <div id="notice_<%= post.slug %>" class='span6' style="display:none">
         <%= render :partial => 'layouts/messages' , :locals => { :flash => flash } %>
     </div>
     <div class="span6"></div>
@@ -39,6 +39,12 @@
 <% elsif params[:tab] == 'comments' %>
   <% @user.comments.each do |comment| %>
   </br>
+  <div class="row">
+    <div id="notice_<%= comment.id %>" class='span6' style="display:none">
+        <%= render :partial => 'layouts/messages' , :locals => { :flash => flash } %>
+    </div>
+    <div class="span6"></div>
+  </div>
     <%= render 'comments/comment', comment: comment, show_post: true %>
   <% end %>
 <% end %>
