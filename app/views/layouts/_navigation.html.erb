@@ -5,14 +5,14 @@
 </ul>
 
 <div class='btn-group nav_item'>
-  <%= link_to '#', class: 'btn btn-small btn-info dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+  <%= link_to '#', class: 'btn btn-small btn-primary dropdown-toggle', 'data-toggle' => 'dropdown' do %>
     Categories <span class='caret'></span>
   <% end %>
   <ul class='dropdown-menu'>
     <% Category.all.each do |category| %>
       <li><%= link_to category.name , category_path(category) %></li>
     <% end %>
-    <% if logged_in? %>
+    <% if logged_in? and current_user.admin? %>
     <li class='divider'></li>
     <li>
       <%= link_to(new_category_path) do %>
@@ -33,10 +33,10 @@
 
 <% if logged_in? %>
   <div class='nav_item'>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-info btn-small' %>
+    <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %>
   </div>
   <div class='btn-group nav_item'>
-    <%= link_to '#', class: 'btn btn-small btn-info dropdown-toggle' , 'data-toggle' => 'dropdown' do %>
+    <%= link_to '#', class: 'btn btn-small btn-primary dropdown-toggle' , 'data-toggle' => 'dropdown' do %>
       <%= current_user.username %> <span class='caret'></span>
     <% end %>
     <ul class='dropdown-menu'>
@@ -62,9 +62,9 @@
   </div>
 <% else %>  
   <div class='nav_item'>
-    <%= link_to 'Register', register_path, class: 'btn btn-info btn-small' %>
+    <%= link_to 'Register', register_path, class: 'btn btn-primary btn-small' %>
   </div>
   <div class='nav_item'>
-    <%= link_to 'Log in', login_path, class: 'btn btn-info' %>
+    <%= link_to 'Log in', login_path, class: 'btn btn-primary' %>
   </div>
 <% end %>

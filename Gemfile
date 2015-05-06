@@ -7,6 +7,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'therubyracer'
+gem 'gemcutter'
+gem 'voteable_chiprockstar'
 # twitter bootstrap css & javascript toolkit
 gem 'twitter-bootswatch-rails', '~> 3.3.2'
 
