@@ -7,7 +7,7 @@
       <br/>
     <% end %>
     <span id="post_<%= post.slug %>_votes"><%= pluralize(post.total_votes, 'vote') %></span>
-      
+
     <br/>
     <% if logged_in? %>
       <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>

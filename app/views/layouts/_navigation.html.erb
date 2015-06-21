@@ -1,11 +1,9 @@
-<ul class="nav">
-  <li>
-    <%= link_to "Postit!", root_path, :class => 'brand' %>
-  </li>
-</ul>
+<div class="nav">
+    <%= link_to "Postit!", root_path, :class => 'navbar-brand' %>
+</div>
 
 <div class='btn-group nav_item'>
-  <%= link_to '#', class: 'btn btn-small btn-default dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+  <%= link_to '#', class: 'btn btn-primary btn-sm dropdown-toggle', 'data-toggle' => 'dropdown' do %>
     Categories <span class='caret'></span>
   <% end %>
   <ul class='dropdown-menu'>
@@ -20,7 +18,7 @@
         New Category
         <% end %>
     </li>
-    <% end %> 
+    <% end %>
   </ul>
   <ul class="nav">
     <li>
@@ -33,26 +31,26 @@
 
 <% if logged_in? %>
   <div class='nav_item'>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-default btn-small' %>
+    <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-sm' %>
   </div>
   <div class='btn-group nav_item'>
-    <%= link_to '#', class: 'btn btn-small btn-default dropdown-toggle' , 'data-toggle' => 'dropdown' do %>
+    <%= link_to '#', class: 'btn btn-primary btn-sm dropdown-toggle' , 'data-toggle' => 'dropdown' do %>
       <%= current_user.username %> <span class='caret'></span>
     <% end %>
     <ul class='dropdown-menu'>
-      <li> 
+      <li>
         <%= link_to edit_user_path(current_user)  do %>
           <i class='icon-pencil'></i>
           edit profile
         <% end %>
       </li>
-       <li> 
+       <li>
         <%= link_to user_path(current_user)  do %>
           <i class='icon-user'></i>
           view profile
         <% end %>
       </li>
-      <li> 
+      <li>
         <%= link_to logout_path  do %>
           <i class='icon-circle-arrow-left'></i>
           logout
@@ -60,11 +58,11 @@
       </li>
      </ul>
   </div>
-<% else %>  
+<% else %>
   <div class='nav_item'>
-    <%= link_to 'Register', register_path, class: 'btn btn-default btn-small' %>
+    <%= link_to 'Register', register_path, class: 'btn btn-primary btn-sm' %>
   </div>
   <div class='nav_item'>
-    <%= link_to 'Log in', login_path, class: 'btn btn-default' %>
+    <%= link_to 'Log in', login_path, class: 'btn btn-primary btn-sm' %>
   </div>
 <% end %>
