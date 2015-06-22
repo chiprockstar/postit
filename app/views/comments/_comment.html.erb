@@ -1,6 +1,6 @@
 <% show_post ||= false %>
 <div class="row">
-  <div class='span0 well text-center'>
+  <div class='span2 well text-center quiet'>
     <% if logged_in? %>
       <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
         <i class='icon-arrow-up'></i>
@@ -8,7 +8,7 @@
       <br/>
     <% end %>
 
-    <span id="comment_<%= comment.id %>_votes"><%= pluralize(comment.total_votes, 'vote') %></span>
+    <span id="comment_<%= comment.id %>_votes"><small><%= pluralize(comment.total_votes, 'vote') %></small></span>
     <br/>
     <% if logged_in? %>
       <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
@@ -16,7 +16,7 @@
       <% end %>
     <% end %>
   </div>
-  
+
   <div class="well span8">
     <em>"<%= comment.body %>"</em>
     <% if show_post %>

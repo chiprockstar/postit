@@ -1,13 +1,12 @@
 <div class="row">
-  <div class='span0 well text-center'>
+  <div class='span0 well well-sm text-center quiet'>
     <% if logged_in? %>
       <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
         <i class='icon-arrow-up'></i>
       <% end %>
-      <br/>
     <% end %>
-    <span id="post_<%= post.slug %>_votes"><%= pluralize(post.total_votes, 'vote') %></span>
-
+    <br/>
+      <span id="post_<%= post.slug %>_votes"><small><%= pluralize(post.total_votes, 'vote') %></small></span>
     <br/>
     <% if logged_in? %>
       <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
