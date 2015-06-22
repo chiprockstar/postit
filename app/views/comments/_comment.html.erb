@@ -1,6 +1,6 @@
 <% show_post ||= false %>
 <div class="row">
-  <div class='span2 well text-center quiet'>
+  <div class='span0 well well-sm text-center quiet'>
     <% if logged_in? %>
       <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
         <i class='icon-arrow-up'></i>

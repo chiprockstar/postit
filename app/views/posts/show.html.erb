@@ -1,7 +1,8 @@
 <% if logged_in? %>
-  <p class='pull-right'>
+  <p class='pull-right'><small>
     [<%= link_to 'edit this post', edit_post_path(@post) %>]
   </p>
+</small>
 <% end %>
 <p class="badge"><%= render @post.categories %></p>
 

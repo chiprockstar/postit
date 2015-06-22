@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 20150506140309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
   end
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
     t.integer  "user_id"
@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(version: 20150506140309) do
     t.datetime "updated_at"
   end
 
-  create_table "post_categories", force: true do |t|
+  create_table "post_categories", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
     t.text     "description"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150506140309) do
     t.string   "slug"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150506140309) do
     t.string   "time_zone"
   end
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.boolean  "vote"
     t.integer  "user_id"
     t.string   "voteable_type"
