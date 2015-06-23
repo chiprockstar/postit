@@ -9,6 +9,7 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'therubyracer'
 gem 'gemcutter'
 gem 'voteable_chiprockstar'
+gem 'railties', '4.0.0'
 # twitter bootstrap css & javascript toolkit
 gem 'twitter-bootswatch-rails', '~> 3.3.2'
 
