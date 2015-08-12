@@ -9,16 +9,24 @@
 #   pool: 5
 #   timeout: 5000
 
-# heroku database
+
 development:
-  adapter:  postgresql
-  encoding: unicode
-  pool: 5
-  database: <%= ENV['POSTIT_DEV_DATABASE'] %>
-  username: <%= ENV['POSTIT_DEV_USER'] %>
-  password: <%= ENV['POSTIT_DEV_PASSWORD'] %>
-  host: <%= ENV['POSTIT_DEV_HOST'] %>
-  port: <%= ENV['POSTIT_DEV_PORT'] %>
+  adapter: postgresql
+  database: postit
+  host: localhost
+
+  # heroku database
+
+  # adapter:  postgresql
+  # encoding: unicode
+  # pool: 5
+  # database: <%= ENV['POSTIT_DEV_DATABASE'] %>
+  # username: <%= ENV['POSTIT_DEV_USER'] %>
+  # password: <%= ENV['POSTIT_DEV_PASSWORD'] %>
+  # host: <%= ENV['POSTIT_DEV_HOST'] %>
+  # port: <%= ENV['POSTIT_DEV_PORT'] %>
+
+
 
 # default: &default
 #   adapter: postgresql
@@ -31,7 +39,7 @@ development:
 # development:
 #   <<: *default
 #   database: postit_app_development
-  
+
 # test:
 #   <<: *default
 #   database: postit_app_test

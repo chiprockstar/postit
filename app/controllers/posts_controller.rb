@@ -39,11 +39,11 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  
+
   def vote
 
     @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
-    
+
     respond_to do |format|
       if @vote.valid?
         flash.now['notice'] = "Your vote was counted."
@@ -53,8 +53,8 @@ class PostsController < ApplicationController
      # format.html {redirect_to :back, notice: "Your vote was counted."}
       format.js
     end
-    
-    
+
+
     # redirect_to :back
   end
 
@@ -67,9 +67,9 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find_by slug: params[:id]
   end
-  
+
   def require_creator
     access_denied unless logged_in? and (current_user == @post.creator || current_user.admin?)
   end
-  
+
 end

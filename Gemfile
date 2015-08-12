@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '4.2.1'
-gem 'rails', '4.0.0'
+gem 'rails' #, '4.2.1'
+#gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -34,11 +34,15 @@ group :development do
   gem 'pry' #, '~> 0.10.1'
   gem 'awesome_print'
 
- # gem 'sqlite3'
+group :test do
+  gem 'sqlite3'
+end
+
  # gem 'pg' #, '~> 0.18.1'
 end
 
 group :production do
  # gem 'pg' #, '~> 0.18.1'
+  gem 'sqlite3'
   gem 'rails_12factor'
 end
