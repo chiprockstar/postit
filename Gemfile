@@ -38,11 +38,8 @@ group :test do
   gem 'sqlite3'
 end
 
- # gem 'pg' #, '~> 0.18.1'
 end
 
 group :production do
- # gem 'pg' #, '~> 0.18.1'
-  gem 'sqlite3'
   gem 'rails_12factor'
 end
